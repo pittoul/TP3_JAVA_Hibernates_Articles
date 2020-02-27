@@ -8,6 +8,7 @@ package tp.requetes.hibernates_tp03_model;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
 import javax.persistence.OneToMany;
 
 /**

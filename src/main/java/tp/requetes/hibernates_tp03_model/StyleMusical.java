@@ -6,11 +6,13 @@
 package tp.requetes.hibernates_tp03_model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -26,6 +28,18 @@ public class StyleMusical implements Serializable {
     @Column(name = "libelle_", unique = true)
     private String libelle;
 
+    @OneToMany
+    private List<Cd> listeCd;
+
+    public List<Cd> getListeCd() {
+        return listeCd;
+    }
+
+    public void setListeCd(List<Cd> listeCd) {
+        this.listeCd = listeCd;
+    }
+    
+    
     public long getId() {
         return id;
     }

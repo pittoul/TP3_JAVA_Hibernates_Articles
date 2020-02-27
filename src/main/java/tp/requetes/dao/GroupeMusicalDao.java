@@ -15,7 +15,7 @@ import tp.requetes.hibernates_tp03_model.GroupeMusical;
  *
  * @author Bruno
  */
-public class GroupeMusiclaDao extends GenericDao{
+public class GroupeMusicalDao extends GenericDao{
     
    public GroupeMusical insert(GroupeMusical groupeMusical) throws AlreadyExistsException {
         EntityManager entityManager = getEntityManager();
@@ -32,7 +32,7 @@ public class GroupeMusiclaDao extends GenericDao{
      * @return A list containing all the types.
      */
     public List<GroupeMusical> findAll() {
-        return getEntityManager().createQuery("from groupeMusical order by number", GroupeMusical.class).getResultList();
+        return getEntityManager().createQuery("from groupeMusical", GroupeMusical.class).getResultList();
     }
 
     /**

@@ -25,6 +25,16 @@ public class Dvd extends Article implements Serializable{
     @ManyToOne
     private Realisateur realisateur;
 
+    public Dvd(String titre) {
+        super(titre);
+    }
+
+    
+
+    public Dvd(String titre, int prix) {
+        super(titre, prix);
+    }
+
     public Realisateur getRealisateur() {
         return realisateur;
     }

@@ -16,22 +16,21 @@ import tp.requetes.hibernates_tp03_model.Cd;
  * @author Bruno
  */
 public class CdDao extends GenericDao{
+    
  public Cd insert(Cd cd) throws AlreadyExistsException {
         EntityManager entityManager = getEntityManager();
-
         DatabaseHelper.beginTransaction(entityManager);
         entityManager.persist(cd);
         DatabaseHelper.commitTransactionAndClose(entityManager);
         return cd;
     }
 
-    /**
-     * Finds all types.
-     *
-     * @return A list containing all the types.
-     */
+   /**
+    * 
+    * @return 
+    */
     public List<Cd> findAll() {
-        return getEntityManager().createQuery("from cd order by number", Cd.class).getResultList();
+        return getEntityManager().createQuery("from cd", Cd.class).getResultList();
     }
 
     /**

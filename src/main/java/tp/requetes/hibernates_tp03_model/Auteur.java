@@ -9,6 +9,9 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
@@ -19,19 +22,24 @@ import javax.persistence.OneToMany;
 @Entity
 public class Auteur extends Personne implements Serializable{
 
-   @OneToMany
-    private List<Livre> listeLivre;
+   @ManyToMany
+   @JoinTable(name = "auteur_livre",
+            joinColumns = {
+                @JoinColumn(name = "auteur_id")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "livre_id")})
+    private List<Livre> listeLivres;
 
     public Auteur(String nom, String prenom) {
         super(nom, prenom);
     }
 
     public List<Livre> getListeLivre() {
-        return listeLivre;
+        return listeLivres;
     }
 
-    public void setListeLivre(List<Livre> listeLivre) {
-        this.listeLivre = listeLivre;
+    public void setListeLivre(List<Livre> listeLivres) {
+        this.listeLivres = listeLivres;
     }
    
    

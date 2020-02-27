@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
 public class GroupeMusical extends Personne implements Serializable{
     
     
-    @OneToMany
+    @OneToMany(mappedBy = "groupe")
     private List<Cd> listeCd;
     
     @Column(name = "nom_groupe_", unique = true)

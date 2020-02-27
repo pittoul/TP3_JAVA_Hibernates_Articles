@@ -8,6 +8,7 @@ package tp.requetes.hibernates_tp03_model;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -16,20 +17,28 @@ import javax.persistence.OneToMany;
  * @author Bruno
  */
 @Entity
-public class Livre extends Article implements Serializable{
-    
-   @ManyToOne
-    private Auteur auteur;
+public class Livre extends Article implements Serializable {
 
-    public Auteur getAuteur() {
-        return auteur;
+    
+
+    @ManyToMany(mappedBy = "listeLivres")
+    private List<Auteur> listAuteurs;
+
+    public Livre(String titre, int prix) {
+        super(titre, prix);
     }
 
-    public void setAuteur(Auteur auteur) {
-        this.auteur = auteur;
+    public Livre(String titre) {
+        super(titre);
     }
 
-    
-    
-   
+    public List<Auteur> getListAuteurs() {
+        return listAuteurs;
+    }
+
+    public void setListAuteurs(List<Auteur> listAuteurs) {
+        this.listAuteurs = listAuteurs;
+    }
+
+
 }

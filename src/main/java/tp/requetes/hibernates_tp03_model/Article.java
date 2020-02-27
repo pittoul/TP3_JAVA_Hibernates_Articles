@@ -31,6 +31,15 @@ public class Article implements Serializable {
     @Column(name = "titre_")
     private String titre;
 
+    public Article(String titre, int prix) {
+        this.titre = titre;
+        this.prix = prix;
+    }
+
+    public Article(String titre) {
+        this.titre = titre;
+    }
+
     @Column(name = "prix_")
     private int prix;
 
