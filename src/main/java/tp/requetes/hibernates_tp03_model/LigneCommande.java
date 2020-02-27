@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -25,18 +26,14 @@ import javax.persistence.Table;
 public class LigneCommande implements Serializable {
 
 //    Pas besoin de clé primaire, on fait avec la clé composée
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     
     @Id
-    @OneToOne
-    @JoinColumn(name = "commande_id", table = "commande")
     private long idCommande;
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "article_id", table = "article")
     private long idArticle;
 
     @Column(name = "quantite_")

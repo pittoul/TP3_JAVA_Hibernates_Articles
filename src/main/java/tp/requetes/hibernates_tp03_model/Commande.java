@@ -26,7 +26,7 @@ public class Commande implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    @OneToMany(mappedBy="commande_id")
+    @OneToMany
     private List<LigneCommande> lignesCommande;
 
     public long getId() {

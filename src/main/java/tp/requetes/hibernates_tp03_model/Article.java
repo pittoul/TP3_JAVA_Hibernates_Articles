@@ -14,8 +14,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.OneToMany;
 
 /**
@@ -36,20 +34,16 @@ public class Article implements Serializable {
     @Column(name = "prix_")
     private int prix;
 
-    @OneToMany
-    @JoinColumns({
-        @JoinColumn(name = "id"),
-        @JoinColumn(name = "commande_id", table = "commande")
-    })
-    private List<LigneCommande> lignesCommandes;
-
-    public List<LigneCommande> getLignesCommandes() {
-        return lignesCommandes;
-    }
-
-    public void setLignesCommandes(List<LigneCommande> lignesCommandes) {
-        this.lignesCommandes = lignesCommandes;
-    }
+//    @OneToMany
+//    private List<LigneCommande> lignesCommandes;
+//
+//    public List<LigneCommande> getLignesCommandes() {
+//        return lignesCommandes;
+//    }
+//
+//    public void setLignesCommandes(List<LigneCommande> lignesCommandes) {
+//        this.lignesCommandes = lignesCommandes;
+//    }
 
     public Long getId() {
         return id;

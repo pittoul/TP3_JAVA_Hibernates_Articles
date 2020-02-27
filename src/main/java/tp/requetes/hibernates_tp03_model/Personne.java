@@ -26,10 +26,10 @@ public class Personne implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nom_", unique = true)
+    @Column(name = "nom_")
     private String nom;
 
-    @Column(name = "prenom_", unique = true)
+    @Column(name = "prenom_")
     private String prenom;
 
     public Personne() {

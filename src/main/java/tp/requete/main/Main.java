@@ -53,7 +53,7 @@ public class Main {
         Personne john = new GroupeMusical();
         john.setPrenom("John");
         john.setNom("Lennon");
-        Personne paul = new Personne("Mac Cartney", "Paul");
+        Personne paul = new GroupeMusical("Mac Cartney", "Paul");
         membresBeatles.add((GroupeMusical) john);
         membresBeatles.add((GroupeMusical) paul);
         beatles.setMembres(membresBeatles);
